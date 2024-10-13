@@ -1,0 +1,6 @@
+name: "Label new PR"
+description: "Add new label when pr opend"
+
+runs:
+  using: "node16"
+  main: "dist/index.js"
