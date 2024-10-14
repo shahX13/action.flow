@@ -1,6 +1,12 @@
 name: "Label new PR"
 description: "Add new label when pr opend"
 
+inputs:
+  name:
+    description: "name to say"
+    required: true
+    default: "pokemon"
+
 runs:
   using: "node16"
   main: "dist/index.js"

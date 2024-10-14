@@ -1,7 +1,11 @@
 name: "Hello"
 
-on: 
-  workflow_dispatch:
+on:
+ pull_request:
+    types:
+      - opened
+      - closed
+  #workflow_dispatch:
     
 jobs:
   hello:
@@ -9,3 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ./
+        with:
+          gh-token: ${{secrets.GH_TOKEN}}
+          label: "needs-review"
